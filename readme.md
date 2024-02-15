@@ -1,1 +1,3 @@
-# python-banking
+Creating a bank app using python. 
+
+
