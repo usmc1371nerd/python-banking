@@ -78,6 +78,10 @@ def main():
             break
         else:
             print("Invalid choice. Pleasw try again")
+
+
+if __name__ == "__main__":
+    main()
     
 
 
