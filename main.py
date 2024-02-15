@@ -71,7 +71,15 @@ def main():
                         break
                     else: 
                         print("Not an option try again")
-                    
+            else:
+                print("Account not found. You will need to create an account first")
+        elif choice =="3":
+            print("Thank you for using the Bank of Python")
+            break
+        else:
+            print("Invalid choice. Pleasw try again")
+    
+
 
 
                 
