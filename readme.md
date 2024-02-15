@@ -1,6 +1,6 @@
 Creating a bank app using python. 
 
-Worked on OOD and git actions. 
+Worked on OOP and git actions. 
 
 Tried to push code as project went on in each stage to create a timeline of commits.
 This was a 7 minute tutorial from youtube user is Code Nust. I want to continue this project
