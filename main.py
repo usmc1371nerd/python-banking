@@ -14,4 +14,7 @@ class BankAccount:
             self.balance -= amount
             print(f"Withdraw {amount} dollars. New balance: {self.balance} dollars.")
 
+    def check_balance (self):
+        print(f"Your balance is {self.balance} dollars.")
     
+        
