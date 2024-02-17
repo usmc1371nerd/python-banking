@@ -12,6 +12,7 @@ Future of this project:
 3. Create a savings account
 4. Add a exhange rate for other currency's
 5. Select a front-end (Just HTML/CSS, or maybe React?)
+6. add a savings account 
 
 ############################################################################################################
 

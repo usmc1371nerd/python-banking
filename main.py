@@ -1,4 +1,4 @@
-class BankAccount:
+class CheckingAccount:
     def __init__(self, name, balance=0):
         self.name = name
         self.balance = balance
@@ -17,6 +17,25 @@ class BankAccount:
     def check_balance (self):
         print(f"Your balance is {self.balance} dollars.")
 
+class SavingsAccount:
+    def __init__(self, name, balance=0):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Depositied {amount} dollars. New balance: {self.balance} dollars.")    
+
+    def withdraw (self, amount):
+        if amount > self.balance:
+            print("Insufficent funds")
+        else:
+            self.balance -= amount
+            print(f"Withdraw {amount} dollars. New balance: {self.balance} dollars.")
+
+    def check_balance (self):
+        print(f"Your balance is {self.balance} dollars.")   
+               
 
 ##################################
 #                                #
@@ -28,7 +47,7 @@ def main():
     accounts={}
 
     while True:
-        print("\nWelcome to the Bank of Python")
+        print("Welcome to the Bank of Python")
         print("1. Create Account")
         print("2. Log in")
         print("3. Quit")
@@ -43,41 +62,56 @@ def main():
             if name in accounts:
                 print("Account already exists")
             else: 
-                accounts[name] = BankAccount(name)
+                accounts[name] = CheckingAccount(name), SavingsAccount(name)
                 print("Account created successfully.")
+                print(accounts)
         elif choice =="2":
             name = input("Enter your name:")
             if name in accounts:
-                account = accounts[name]
+                accounts = accounts[name]
                 print(f"Welcome back, {name}!")
+                print(accounts)
                 while True:
-                    print("\n 1. Check Balance")
-                    print("2. Deposit")
-                    print("3. Withdraw")
-                    print("4. Logout")
+                    print("Which account would you like to use: \n 1. Checking \n 2. Savings")
+                    # print("1. Checking Balance")
+                    # print("2. Savings Balance")
+                    # print("3. Deposit Checking")
+                    # print("4. Deposit Savings")
+                    # print("5. Withdraw Checking")
+                    # print("6. Withdraw Savings")
+                    # print("7. Logout")
 
                     option= input("Enter your option:")
 
                     if option == "1":
-                        account.check_balance()
-                    elif option == "2":
-                        amount = float(input("Enter the amount to deposit"))
-                        account.deposit(amount)
-                    elif option == "3":
-                        amount = float(input("Enter the amount you wish to withdraw"))
-                        account.withdraw(amount)
-                    elif option == "4":
-                        print("you are logged out")
-                        break
+                        account= CheckingAccount
+                        print("You have slected Checking")
+                        print(account)
+                        
+                    if option == "2":
+                            print("You have selcted Savings")
+
                     else: 
-                        print("Not an option try again")
-            else:
-                print("Account not found. You will need to create an account first")
-        elif choice =="3":
-            print("Thank you for using the Bank of Python")
-            break
-        else:
-            print("Invalid choice. Pleasw try again")
+                        print("Please select either 1 or 2")
+                    
+
+        #                 # amount = float(input("Enter the amount to deposit"))
+        #                 # account.deposit(amount)
+        #             elif option == "3":
+        #                 amount = float(input("Enter the amount you wish to withdraw"))
+        #                 account.withdraw(amount)
+        #             elif option == "4":
+        #                 print("you are logged out")
+        #                 break
+        #             else: 
+        #                 print("Not an option try again")
+        #     else:
+        #         print("Account not found. You will need to create an account first")
+        # elif choice =="3":
+        #     print("Thank you for using the Bank of Python")
+        #     break
+        # else:
+        #     print("Invalid choice. Pleasw try again")
 
 
 if __name__ == "__main__":
