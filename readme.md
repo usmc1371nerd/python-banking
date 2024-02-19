@@ -34,4 +34,3 @@ in your virtual enviroment make sure you install flask!
 
 #####################################################################################
 
-adding a savings I want to be able to add balances and check each account. 
