@@ -64,62 +64,65 @@ def main():
             else: 
                 accounts[name] = (CheckingAccount(name), SavingsAccount(name))
                 print("Account created successfully.")
-                print(accounts)
+                print("choice 1")
         elif choice =="2":
             name = input("Enter your name:")
             if name in accounts:
                 checking_account, savings_account = accounts[name]
                 print(f"Welcome back, {name}!")
-                print(accounts)
+                print("this is working")
                 while True:
-                    print("Which account would you like to use: \n 1. Checking \n 2. Savings")
-                    # print("1. Checking Balance")
-                    # print("2. Savings Balance")
-                    # print("3. Deposit Checking")
-                    # print("4. Deposit Savings")
-                    # print("5. Withdraw Checking")
-                    # print("6. Withdraw Savings")
-                    # print("7. Logout")
-
+                    print("Which account would you like to use: \n 1. Checking \n 2. Savings \n 3. Back to Main Menu")
+                
+            
                     option= input("Enter your option:")
 
                     if option == "1":
                         account= checking_account
                         print("You have selected Checking")
                         print("What would you like to do today?")
-                        checking_option=input("1. Withdraw\n2. Deposit\n3. Check balance: ")
-                    
+                        checking_option=input("1. Withdraw\n2. Deposit\n3. Check balance:")
+                            
 
                         if checking_option == "1":
                             amount = float(input("Enter the amount you wish to withdraw: "))
                             account.withdraw(amount)
-                        if checking_option == "2":
+                        elif checking_option == "2":
                             amount = float(input("Enter the amount to deposit: "))
                             account.deposit(amount)
-                        if checking_option == "3":
-                            account.check_balance()
-                        else:
-                            pass
-                          
+                        elif checking_option == "3":
+                            account.check_balance()          
+                    else:
+                      pass   
 
-                    elif option == "2":
+                                
+                                
+                    if option == "2":
                         account= savings_account
                         print("You have selected Savings")
                         print("What would you like to do today?")
                         savings_option=input("1. Withdraw\n2. Deposit\n3. Check balance: ")
-            
                     
+                            
                         if savings_option == "1":
                             amount = float(input("Enter the amount you wish to withdraw: "))
                             account.withdraw(amount)
-                        if savings_option == "2":
+                        elif savings_option == "2":
                             amount = float(input("Enter the amount to deposit: "))
                             account.deposit(amount)
-                        if savings_option == "3":
+                        elif savings_option == "3":
                             account.check_balance()
-                    
-            else: 
-                print("Please select either 1 or 2")
+                        else:
+                            pass
+                    elif option == "3":
+                        break
+        
+        elif choice=="3":
+            print("You are logged out")
+            break                   
+                        
+            # else: 
+            #     print("Please select either 1 or 2")
 
                     # if account == CheckingAccount:
                     #     print("What you like to do today?")
