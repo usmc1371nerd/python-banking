@@ -62,13 +62,13 @@ def main():
             if name in accounts:
                 print("Account already exists")
             else: 
-                accounts[name] = CheckingAccount(name), SavingsAccount(name)
+                accounts[name] = (CheckingAccount(name), SavingsAccount(name))
                 print("Account created successfully.")
                 print(accounts)
         elif choice =="2":
             name = input("Enter your name:")
             if name in accounts:
-                accounts = accounts[name]
+                checking_account, savings_account = accounts[name]
                 print(f"Welcome back, {name}!")
                 print(accounts)
                 while True:
@@ -84,19 +84,58 @@ def main():
                     option= input("Enter your option:")
 
                     if option == "1":
-                        account= CheckingAccount
-                        print("You have slected Checking")
-                        print(account)
-                        
-                    if option == "2":
-                            print("You have selcted Savings")
-
-                    else: 
-                        print("Please select either 1 or 2")
+                        account= checking_account
+                        print("You have selected Checking")
+                        print("What would you like to do today?")
+                        checking_option=input("1. Withdraw\n2. Deposit\n3. Check balance: ")
                     
 
-        #                 # amount = float(input("Enter the amount to deposit"))
-        #                 # account.deposit(amount)
+                        if checking_option == "1":
+                            amount = float(input("Enter the amount you wish to withdraw: "))
+                            account.withdraw(amount)
+                        if checking_option == "2":
+                            amount = float(input("Enter the amount to deposit: "))
+                            account.deposit(amount)
+                        if checking_option == "3":
+                            account.check_balance()
+                        else:
+                            pass
+                          
+
+                    elif option == "2":
+                        account= savings_account
+                        print("You have selected Savings")
+                        print("What would you like to do today?")
+                        savings_option=input("1. Withdraw\n2. Deposit\n3. Check balance: ")
+            
+                    
+                        if savings_option == "1":
+                            amount = float(input("Enter the amount you wish to withdraw: "))
+                            account.withdraw(amount)
+                        if savings_option == "2":
+                            amount = float(input("Enter the amount to deposit: "))
+                            account.deposit(amount)
+                        if savings_option == "3":
+                            account.check_balance()
+                    
+            else: 
+                print("Please select either 1 or 2")
+
+                    # if account == CheckingAccount:
+                    #     print("What you like to do today?")
+                    #     checking_option= input("1. Withdraw \n 2. Deposit \n 3. Check balance")
+
+                    #     if checking_option== "1":
+                    #         amount = float(input("Enter the amount you wish to withdraw"))
+                    #         account.withdraw(amount)
+                    #     if checking_option== "2":
+                    #          amount = float(input("Enter the amount to deposit"))
+                    #          account.deposit(amount)
+                    #     if checking_option== "3":
+                    #         account.check_balance(amount)
+
+
+        
         #             elif option == "3":
         #                 amount = float(input("Enter the amount you wish to withdraw"))
         #                 account.withdraw(amount)
