@@ -55,7 +55,7 @@ def main():
         choice = input("Please chose your option:")
 
 
-#if else statement to handle the choices 
+#if else statement to handle the choices from user
         
         if choice == "1":
             name = input("Enter your name:")
@@ -121,41 +121,7 @@ def main():
             print("You are logged out")
             break                   
                         
-            # else: 
-            #     print("Please select either 1 or 2")
-
-                    # if account == CheckingAccount:
-                    #     print("What you like to do today?")
-                    #     checking_option= input("1. Withdraw \n 2. Deposit \n 3. Check balance")
-
-                    #     if checking_option== "1":
-                    #         amount = float(input("Enter the amount you wish to withdraw"))
-                    #         account.withdraw(amount)
-                    #     if checking_option== "2":
-                    #          amount = float(input("Enter the amount to deposit"))
-                    #          account.deposit(amount)
-                    #     if checking_option== "3":
-                    #         account.check_balance(amount)
-
-
-        
-        #             elif option == "3":
-        #                 amount = float(input("Enter the amount you wish to withdraw"))
-        #                 account.withdraw(amount)
-        #             elif option == "4":
-        #                 print("you are logged out")
-        #                 break
-        #             else: 
-        #                 print("Not an option try again")
-        #     else:
-        #         print("Account not found. You will need to create an account first")
-        # elif choice =="3":
-        #     print("Thank you for using the Bank of Python")
-        #     break
-        # else:
-        #     print("Invalid choice. Pleasw try again")
-
-
+       
 if __name__ == "__main__":
     main()
     

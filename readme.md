@@ -23,6 +23,14 @@ To run code in your terminal make sure you are in the correct folder (Banking-Py
 you will then need to input python main.py. This will execute the code. Then follow the 
 the inputs as neccessary. 
 
+To start your virtual enviroment mac user's
+source venv/bin/activate
+
+To start your virtual enviroment window's user's
+venv\Scripts\activate
+
+in your virtual enviroment make sure you install flask!
+
 
 #####################################################################################
 
