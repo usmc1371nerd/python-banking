@@ -10,7 +10,7 @@ Future of this project:
 1. Add a database
 2. Connect to AWS (need to learn more about lambdas)
 3. Add a exhange rate for other currency's
-5. Select a front-end (Just HTML/CSS, or maybe React?) will need to create a venv 
+4. Select a front-end (Just HTML/CSS, or maybe React?) will need to create a venv 
     make a flask app. So we can then create full web app. 
 
 
