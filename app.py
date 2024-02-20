@@ -1,3 +1,15 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
+
+#make sure app is connecting to browser by hardcoding the h1 Python Banking app
+@app.route('/')
+def index():
+    return "<h1>Python Banking App<h1>"
+
+
+
 class CheckingAccount:
     def __init__(self, name, balance=0):
         self.name = name
@@ -123,7 +135,7 @@ def main():
                         
        
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)
     
 
 
