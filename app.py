@@ -17,7 +17,13 @@ db.init_app(app)
 def index():
     return "<h1>Python Banking App<h1>"
 
-
+def create_account():
+    name = request.form['name']
+    if name in accounts:
+        return "Account already exists"
+    else:
+        accounts[name] = (CheckingAccount(name), SavingsAccount(name))
+        return "Account created successfully"
 
 class CheckingAccount:
     def __init__(self, name, balance=0):
@@ -146,6 +152,7 @@ def main():
                        
        
 if __name__ == "__main__":
+     app.run(host='127.0.0.1', port=5001, debug=True)
      with app.app_context():
         db.create_all()
         app.run(debug=True)
