@@ -1,6 +1,7 @@
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from models.models import db
+from models import create_user, User, CheckingAccount, SavingsAccount
 
 
 app = Flask(__name__)
@@ -17,6 +18,34 @@ db.init_app(app)
 def index():
     return "<h1>Python Banking App<h1>"
 
+
+"""Things I need to keep in mind while creating the create_user I need it to check if user is 
+already in the db then user needs to be alerted to the this account is already created. 
+
+Lets keep in mind that I will want to add a crypto account so that we can predict/ see/ and check current
+crypto accounts in accordance with money in the account. 
+
+Thoughts: Can we use a predicition of amounts of deposit, taking a small percent over a period of time 
+what the crypto could be at current trend? Set a default time amount of 2 years... or more.. 
+"""
+
+
+
+# Route to handle user creation from the frontend
+@app.route('/create_user', methods=['POST'])
+def handle_create_user():
+    # Get user information from the request
+    username = request.form['username']
+    password = request.form['password']
+
+
+    # Call the create_user function to add the user to the database
+    create_user(username, password)
+
+    return 'User created successfully'
+
+
+@app.route('createAccount')
 def create_account():
     name = request.form['name']
     if name in accounts:

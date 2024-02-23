@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import random
-
+import hashlib
 
 
 
@@ -18,6 +18,21 @@ class User (db.Model):
     password = db.Column(db.String(50), nullable=False)
     checking_accounts = db.relationship('CheckingAccount', backref='user', lazy=True)
     savings_accounts = db.relationship('SavingsAccount', backref='user', lazy=True)
+
+    def __repr__(self):
+        return f'<User {self.username}>'
+    
+    # Function to create a user and add it to the database
+def create_user(username, password):
+    # Hash the password using SHA-256
+    password_hash = hashlib.sha256(password.encode()).hexdigest()
+
+    # Create a new user instance
+    new_user = User(username=username, password_hash=password_hash)
+
+    # Add the new user to the database session and commit changes
+    db.session.add(new_user)
+    db.session.commit()
 
 class CheckingAccount(db.Model):
     id = db.Column(db.Integer, primary_key=True)
